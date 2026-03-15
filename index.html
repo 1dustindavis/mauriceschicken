@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chicken Clicker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="topbar-head">
+          <h1>Chicken Clicker</h1>
+          <button id="reset" class="reset" type="button">Reset Save</button>
+        </div>
+        <p>Collect eggs. Build your flock. Hatch an empire.</p>
+      </header>
+
+      <section class="status" aria-live="polite">
+        <div class="stat">
+          <span class="label">Eggs</span>
+          <strong id="eggs">0</strong>
+        </div>
+        <div class="stat">
+          <span class="label">Eggs Gained / sec</span>
+          <strong id="eps">0</strong>
+        </div>
+        <div id="egg-spend-stat" class="stat" hidden>
+          <span class="label">Eggs Spent / sec</span>
+          <strong id="egg-spend">0</strong>
+        </div>
+      </section>
+
+      <section class="play-area">
+        <div id="farm-scene" class="farm-scene" aria-live="polite">
+          <div class="scene-sky"></div>
+          <div class="scene-ground"></div>
+          <div id="nest-visual" class="nest-visual" aria-label="Nest level"></div>
+          <div id="hen-visual" class="hen-visual" aria-label="Hen flock"></div>
+          <div id="upgrade-visuals" class="upgrade-visuals" aria-label="Upgrade visuals"></div>
+        </div>
+        <button id="chicken" class="chicken" type="button" aria-label="Collect eggs">
+          <span class="bird">🐔</span>
+          <span class="tap">Click for eggs</span>
+        </button>
+        <div id="egg-particles" class="egg-particles" aria-hidden="true"></div>
+      </section>
+
+      <section class="store">
+        <h2>Store</h2>
+        <p class="hint">Buy producers to generate eggs automatically.</p>
+        <ul id="store-list"></ul>
+      </section>
+
+      <section id="nugget-section" class="nugget-section hidden" aria-live="polite">
+        <header class="nugget-head">
+          <h2>Maurice's Nugget Factory</h2>
+          <p>Maurice's industrial line. Nuggets consume eggs as fuel.</p>
+        </header>
+
+        <section class="nugget-status">
+          <div class="stat stat-nugget">
+            <span class="label">Nuggets</span>
+            <strong id="nuggets">0</strong>
+          </div>
+          <div class="stat stat-nugget">
+            <span class="label">Nuggets / sec</span>
+            <strong id="nps">0</strong>
+          </div>
+          <div class="stat stat-nugget">
+            <span class="label">Flame Cost</span>
+            <strong id="flame-cost">0 eggs</strong>
+          </div>
+        </section>
+
+        <section class="nugget-play">
+          <div class="forge-scene">
+            <div class="forge-smoke"></div>
+            <div id="forge-visuals" class="forge-visuals"></div>
+          </div>
+          <button id="flame-btn" class="flame-btn" type="button" aria-label="Cook nuggets">
+            <span class="flame-icon">🔥</span>
+            <span class="tap">Fire Maurice's fryer</span>
+          </button>
+          <div id="nugget-particles" class="nugget-particles" aria-hidden="true"></div>
+        </section>
+
+        <section class="nugget-store">
+          <h3>Nugget Upgrades</h3>
+          <ul id="nugget-store-list"></ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="game-core.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
