@@ -26,6 +26,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .app {
   width: 100%;
   max-width: 980px;
@@ -40,6 +44,7 @@ body {
 .status,
 .store,
 .play-area {
+  width: 100%;
   background: var(--card);
   border: 2px solid var(--line);
   border-radius: 18px;
@@ -135,7 +140,8 @@ body {
   overflow: hidden;
   isolation: isolate;
   z-index: 1;
-  width: min(740px, 92vw);
+  width: 100%;
+  max-width: 740px;
   min-height: 220px;
   border: 2px solid var(--line);
   border-radius: 18px;
@@ -304,7 +310,8 @@ body {
 .chicken {
   border: none;
   border-radius: 22px;
-  width: min(320px, 90vw);
+  width: 100%;
+  max-width: 320px;
   padding: 28px 16px;
   background: linear-gradient(170deg, #fff4cf, #ffe6ad);
   box-shadow: 0 8px 20px rgba(111, 69, 0, 0.2);
@@ -480,7 +487,8 @@ body {
 }
 
 .forge-scene {
-  width: min(740px, 92vw);
+  width: 100%;
+  max-width: 740px;
   min-height: 410px;
   position: relative;
   z-index: 1;
@@ -632,7 +640,8 @@ body {
 .flame-btn {
   border: none;
   border-radius: 16px;
-  width: min(320px, 90vw);
+  width: 100%;
+  max-width: 320px;
   padding: 16px;
   background: linear-gradient(170deg, #4f2c12, #311a0a);
   color: #ffd89f;
@@ -805,6 +814,10 @@ body {
 @media (max-width: 700px) {
   .status {
     gap: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .status.has-spend {
     grid-template-columns: 1fr;
   }
 
