@@ -103,6 +103,15 @@ body {
   cursor: pointer;
 }
 
+.reset,
+.chicken,
+.flame-btn,
+.buy,
+.nugget-buy,
+.nugget-pause {
+  touch-action: manipulation;
+}
+
 .reset:hover {
   filter: brightness(0.97);
 }
@@ -296,6 +305,8 @@ body {
   box-shadow: 0 8px 20px rgba(111, 69, 0, 0.2);
   cursor: pointer;
   transition: transform 80ms ease, box-shadow 80ms ease, filter 80ms ease;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .chicken:active {
@@ -465,6 +476,7 @@ body {
   min-height: 360px;
   position: relative;
   z-index: 1;
+  display: grid;
   border-radius: 12px;
   border: 1px solid #697887;
   background:
@@ -487,12 +499,12 @@ body {
 }
 
 .forge-visuals {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  height: 100%;
   padding: 14px;
   display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 8px;
+  grid-template-rows: auto auto;
+  gap: 10px;
   align-content: stretch;
   z-index: 2;
 }
@@ -500,9 +512,9 @@ body {
 .forge-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(88px, auto);
   gap: 10px;
   width: 100%;
-  align-content: start;
 }
 
 .forge-label {
@@ -554,12 +566,18 @@ body {
 }
 
 .forge-lane {
+  position: relative;
+  isolation: isolate;
   border-radius: 8px;
   border: 1px solid rgba(110, 132, 154, 0.65);
   background: linear-gradient(90deg, rgba(13, 19, 25, 0.9), rgba(24, 34, 45, 0.85));
   padding: 6px;
   min-height: 52px;
   overflow: hidden;
+}
+
+.pile-forge {
+  z-index: 1;
 }
 
 .pile-forge .pile-icon {
@@ -573,6 +591,7 @@ body {
   bottom: 0;
   height: 26px;
   width: 100%;
+  margin-top: 2px;
   border-radius: 8px;
   border: 1px solid rgba(108, 129, 148, 0.7);
   background: linear-gradient(90deg, rgba(8, 12, 16, 0.84), rgba(22, 30, 39, 0.78));
@@ -612,6 +631,8 @@ body {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.34);
   cursor: pointer;
   transition: transform 90ms ease, filter 90ms ease;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .flame-btn:active {

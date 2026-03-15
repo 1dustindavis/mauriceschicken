@@ -845,8 +845,26 @@ function handleBeforeUnload() {
   save();
 }
 
-chickenBtn.addEventListener("click", clickChicken);
-flameBtn.addEventListener("click", clickFlame);
+function handlePrimaryButtonPointerDown(handler) {
+  return (event) => {
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    event.preventDefault();
+    handler(event);
+  };
+}
+
+function handlePrimaryButtonKeyDown(handler) {
+  return (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    handler(event);
+  };
+}
+
+chickenBtn.addEventListener("pointerdown", handlePrimaryButtonPointerDown(clickChicken));
+flameBtn.addEventListener("pointerdown", handlePrimaryButtonPointerDown(clickFlame));
+chickenBtn.addEventListener("keydown", handlePrimaryButtonKeyDown(clickChicken));
+flameBtn.addEventListener("keydown", handlePrimaryButtonKeyDown(clickFlame));
 resetBtn.addEventListener("click", resetSave);
 autosaveTimerId = setInterval(save, 5000);
 window.addEventListener("beforeunload", handleBeforeUnload);
