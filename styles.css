@@ -824,6 +824,8 @@ html {
   .topbar-head {
     align-items: center;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .farm-scene {
@@ -862,7 +864,7 @@ html {
   }
 
   .reset {
-    margin-left: 0;
+    margin-left: auto;
   }
 
   .item {
