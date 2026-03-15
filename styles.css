@@ -23,11 +23,11 @@ body {
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   color: var(--ink);
   background: radial-gradient(circle at 20% 20%, var(--bg-2), var(--bg-1) 65%);
-  overflow-x: hidden;
+  overflow-x: visible;
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .app {
