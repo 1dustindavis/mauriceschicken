@@ -25,7 +25,7 @@ body {
 }
 
 .app {
-  width: min(980px, calc(100vw - 24px));
+  width: min(980px, 100%);
   margin: 0 auto;
   padding: 20px max(12px, env(safe-area-inset-right)) 20px
     max(12px, env(safe-area-inset-left));
