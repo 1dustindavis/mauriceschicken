@@ -564,8 +564,11 @@ function updateNuggetBarPosition() {
   nuggetStatusEl.style.setProperty("--nugget-float-width", `${Math.round(sectionRect.width)}px`);
   nuggetStatusEl.style.setProperty("--nugget-float-top", `${topOffset}px`);
 
+  const barHeight = nuggetStatusEl.getBoundingClientRect().height;
+  const bottomOffset = 10;
+  const bottomDockTop = window.innerHeight - barHeight - bottomOffset;
   const shouldFloatTop = naturalBarTop <= topOffset;
-  const shouldFloatBottom = sectionRect.top >= window.innerHeight;
+  const shouldFloatBottom = naturalBarTop > bottomDockTop;
   const hasNuggetProgress = state.totalNuggets > 1;
 
   nuggetStatusEl.classList.toggle("is-floating-top", shouldFloatTop);

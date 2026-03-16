@@ -440,11 +440,11 @@ html {
   left: var(--nugget-float-left, 0);
   width: var(--nugget-float-width, 100%);
   z-index: 2000;
-  padding: 8px;
-  border-radius: 12px;
-  background: rgba(24, 31, 39, 0.95);
-  border: 1px solid #5f6f7f;
-  box-shadow: 0 8px 18px rgba(7, 10, 14, 0.35);
+  padding: 10px 12px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #1d252f, #2f3943);
+  border: 2px solid #5f6f7f;
+  box-shadow: 0 10px 28px rgba(17, 24, 32, 0.35);
 }
 
 .nugget-status.is-floating-top {
@@ -456,7 +456,7 @@ html {
 }
 
 .nugget-section.has-floating-nugget-top {
-  padding-top: 108px;
+  padding-top: 118px;
 }
 
 .stat-nugget {
@@ -464,6 +464,13 @@ html {
   z-index: 1;
   background: #0f1923;
   border: 1px solid #556373;
+}
+
+.nugget-status.is-floating-top .stat-nugget,
+.nugget-status.is-floating-bottom .stat-nugget {
+  border-radius: 12px;
+  background: #0e1822;
+  border: 1px solid #677789;
 }
 
 .stat-nugget .label {
@@ -814,11 +821,11 @@ html {
 @media (max-width: 700px) {
   .status {
     gap: 10px;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .status.has-spend {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .topbar-head {
@@ -842,7 +849,7 @@ html {
   }
 
   .nugget-status {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .forge-grid {
